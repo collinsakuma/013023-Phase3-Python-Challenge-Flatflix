@@ -1,12 +1,10 @@
 class Viewer:
-    
-    all_usernames = []
+
     all = []
 
     def __init__(self, username):
         self.username = username
-        Viewer.all_usernames.append(self.username)
-        Viewer.all.append(self)
+        Viewer.all.append(username)
 
     # username property goes here!
     @property 
@@ -15,7 +13,7 @@ class Viewer:
 
     @username.setter
     def username(self, username):
-        if type(username) == str and 6 <= len(username) <= 16 and username not in Viewer.all_usernames:
+        if type(username) == str and 6 <= len(username) <= 16 and username not in Viewer.all:
             self._username = username
         else:
             raise Exception('user name incorrect')
